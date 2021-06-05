@@ -1,6 +1,8 @@
 # TypeScript-Weather-App
 Weather App designed with TypeScript and React components
 
+URL: https://typescript-weather-app.herokuapp.com/
+
 ## Getting Started
 You may need to clone this repo to get the most of application.
 
