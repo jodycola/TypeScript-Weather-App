@@ -40,6 +40,10 @@ input:focus::placeholder {
     border-style: groove;
 }
 
+.card-description {
+	width: 50%;
+}
+
 /* Footer  */
 .footer {
     font-size: 30px;

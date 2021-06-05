@@ -91,15 +91,18 @@ export const Display: React.FC<DisplayProps> = ({ weatherData, forecastData, cha
 
                 <Card.Text>
                     <div className="card-temp"> 
-                        { weatherData.main === undefined ? null : `${Math.round(weatherData.main.temp)}°` } 
+                        { weatherData.main ? `${Math.round(weatherData.main.temp)}°` : null } 
                     </div>
                 </Card.Text>
 
                 <Card.Text/>
                     <div className="card-description">
-                        { weatherData.main === undefined ? null : `Humidity: ${weatherData.main.humidity}%` } <br/>
-                        { weatherData.main === undefined ? null : `High: ${Math.round(weatherData.main.temp_max)}°` } <br/>
-                        { weatherData.main === undefined ? null : `Low: ${Math.round(weatherData.main.temp_min)}°` } <br/>
+                        { weatherData.main ? `Humidity: ${weatherData.main.humidity}%` : null } <br/>
+                        { weatherData.main ? `High: ${Math.round(weatherData.main.temp_max)}°` : null } <br/>
+                        { weatherData.main ? `Low: ${Math.round(weatherData.main.temp_min)}°` : null } <br/>
+                        { weatherData.coord ? `Longitude ${weatherData.coord.lon}` : null } <br/>
+                        { weatherData.coord ? `Lagitutde ${weatherData.coord.lat}` : null }
+                        
                     </div>
                 </Card.Text>
 
@@ -109,33 +112,33 @@ export const Display: React.FC<DisplayProps> = ({ weatherData, forecastData, cha
             <Card>
             { forecastData.list === undefined ? null : <div className="forecast-container"> 
                 <div className="forecast-item">
-                    { forecastData.list === undefined ? null : (new Date(forecastData.list[0].dt*1000)).toString().slice(0, 10) } <br/>
-                    { forecastData.list === undefined ? null : forecastData.list[0].weather[0].description } <br/>
-                    { forecastData.list === undefined ? null : `${Math.round(forecastData.list[0].main.temp)}°` }
+                    { forecastData.list ? (new Date(forecastData.list[0].dt*1000)).toString().slice(0, 10) : null } <br/>
+                    { forecastData.list ? forecastData.list[0].weather[0].description : null } <br/>
+                    { forecastData.list ? `${Math.round(forecastData.list[0].main.temp)}°` : null }
                 </div>
 
                 <div className="forecast-item">
-                    { forecastData.list === undefined ? null : (new Date(forecastData.list[8].dt*1000)).toString().slice(0, 10) } <br/>
-                    { forecastData.list === undefined ? null : forecastData.list[8].weather[0].description } <br/>
-                    { forecastData.list === undefined ? null : `${Math.round(forecastData.list[8].main.temp)}°` }
+                    { forecastData.list ? (new Date(forecastData.list[8].dt*1000)).toString().slice(0, 10) : null } <br/>
+                    { forecastData.list ? forecastData.list[8].weather[0].description : null } <br/>
+                    { forecastData.list ? `${Math.round(forecastData.list[8].main.temp)}°` : null }
                 </div>
 
                 <div className="forecast-item">
-                    { forecastData.list === undefined ? null : (new Date(forecastData.list[16].dt*1000)).toString().slice(0, 10) } <br/>
-                    { forecastData.list === undefined ? null : forecastData.list[16].weather[0].description } <br/>
-                    { forecastData.list === undefined ? null : `${Math.round(forecastData.list[16].main.temp)}°` }
+                    { forecastData.list ? (new Date(forecastData.list[16].dt*1000)).toString().slice(0, 10) : null } <br/>
+                    { forecastData.list ? forecastData.list[16].weather[0].description : null } <br/>
+                    { forecastData.list ? `${Math.round(forecastData.list[16].main.temp)}°` : null }
                 </div>
 
                 <div className="forecast-item">
-                    { forecastData.list === undefined ? null : (new Date(forecastData.list[24].dt*1000)).toString().slice(0, 10) } <br/>
-                    { forecastData.list === undefined ? null : forecastData.list[24].weather[0].description } <br/>
-                    { forecastData.list === undefined ? null : `${Math.round(forecastData.list[24].main.temp)}°` }
+                    { forecastData.list ? (new Date(forecastData.list[24].dt*1000)).toString().slice(0, 10) : null } <br/>
+                    { forecastData.list ? forecastData.list[24].weather[0].description : null } <br/>
+                    { forecastData.list ? `${Math.round(forecastData.list[24].main.temp)}°` : null }
                 </div>
 
                 <div className="forecast-item">
-                    { forecastData.list === undefined ? null : (new Date(forecastData.list[32].dt*1000)).toString().slice(0, 8) } <br/>
-                    { forecastData.list === undefined ? null : forecastData.list[32].weather[0].description } <br/>
-                    { forecastData.list === undefined ? null : `${Math.round(forecastData.list[32].main.temp)}°` }
+                    { forecastData.list ? (new Date(forecastData.list[32].dt*1000)).toString().slice(0, 8) : null } <br/>
+                    { forecastData.list ? forecastData.list[32].weather[0].description : null } <br/>
+                    { forecastData.list ? `${Math.round(forecastData.list[32].main.temp)}°` : null }
                 </div>
             </div> }
             </Card>
