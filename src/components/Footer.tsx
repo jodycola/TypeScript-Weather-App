@@ -14,9 +14,9 @@ export const Footer: React.FC = () => {
 
     return (
         <div className="footer">
-            <AiFillGithub onClick={redirectGithub}/>
+            <AiFillGithub className="github" onClick={redirectGithub}/>
             {" "}
-            <FaLinkedinIn onClick={redirectLinkedin}/>
+            <FaLinkedinIn className="linkedin" onClick={redirectLinkedin}/>
         </div>
     )
 }

@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react'
-import '../App.css'
 import { Search } from './Search'
 import { Footer } from './Footer'
 
