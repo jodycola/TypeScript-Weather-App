@@ -1,5 +1,4 @@
 import React from 'react'
-import { Carousel } from 'react-bootstrap'
 import { TiWeatherSunny, TiWeatherCloudy, TiWeatherWindy, TiWeatherShower, TiWeatherStormy, TiWeatherSnow } from 'react-icons/ti'
 
 // Display Props
@@ -33,12 +32,26 @@ export const Display: React.FC<DisplayProps> = ({ weatherData, forecastData }) =
         }
     }
 
+
     return (
         <div className="display">
-                <Carousel interval={90000}>
-                    <Carousel.Item>
+            <h1 className="title"> 5 Day Forecast </h1>
+            <h2 className="title"> {weatherData.name ? weatherData.name : null } </h2>
+            <div className="row">
+
+                <div className="column">
+                    <div className="card">
+
                         <div className="date">
-                            { weatherData.dt ?  new Date(weatherData.dt*1000).toString().slice(4, 10) : null }
+                            { weatherData.dt ?  new Date(weatherData.dt*1000).toString().slice(4, 15) : null }
+                        </div>
+
+                        <div className="render">
+                            { weatherData.weather ? renderIcon(weatherData.weather[0].description) : null }
+                        </div>
+
+                        <div className="temp">
+                            { weatherData.main ? `${Math.round(weatherData.main.temp)}°` : null }
                         </div>
 
                         <div className="high-low">
@@ -46,30 +59,45 @@ export const Display: React.FC<DisplayProps> = ({ weatherData, forecastData }) =
                             { weatherData.main ? `Low: ${Math.round(weatherData.main.temp_min)}°` : null }
                         </div>
 
-                        <div className="temp">
-                            { weatherData.main ? `${Math.round(weatherData.main.temp)}°` : null }
-                            { weatherData.weather ? renderIcon(weatherData.weather[0].description) : null }
-                        </div>
-                    </Carousel.Item>
+                    </div>
+                </div>
 
-                    <Carousel.Item>
+                <div className="column">
+                    <div className="card">
+
                         <div className="date">
-                            {  forecastData.list ? (new Date(forecastData.list[8].dt*1000)).toString().slice(4, 10) : null }
+                            { forecastData.list ? (new Date(forecastData.list[8].dt*1000)).toString().slice(4, 15) : null }
+                        </div>
+
+                        <div className="render">
+                            { forecastData.list ? renderIcon(forecastData.list[8].weather[0].description) : null }
+                        </div>
+
+                        <div className="temp">
+                            { forecastData.list ? `${Math.round(forecastData.list[8].main.temp)}°` : null }
                         </div>
 
                         <div className="high-low">
                             { forecastData.list ? `High: ${Math.round(forecastData.list[8].main.temp_max)}°` : null } <br/>
                             { forecastData.list ? `Low: ${Math.round(forecastData.list[8].main.temp_min)}°` : null }
                         </div>
-                        <div className="temp">
-                            { forecastData.list ? `${Math.round(forecastData.list[8].main.temp)}°` : null }
-                            { forecastData.list ? renderIcon(forecastData.list[8].weather[0].description) : null } <br/>
-                        </div>
-                    </Carousel.Item>
 
-                    <Carousel.Item>
+                    </div>
+                </div>
+
+                <div className="column">
+                    <div className="card">
+
                         <div className="date">
-                            {  forecastData.list ? (new Date(forecastData.list[16].dt*1000)).toString().slice(4, 10) : null }
+                            { forecastData.list ? (new Date(forecastData.list[16].dt*1000)).toString().slice(4, 15) : null }
+                        </div>
+
+                        <div className="render">
+                            { forecastData.list ? renderIcon(forecastData.list[16].weather[0].description) : null }
+                        </div>
+
+                        <div className="temp">
+                            { forecastData.list ? `${Math.round(forecastData.list[16].main.temp)}°` : null }
                         </div>
 
                         <div className="high-low">
@@ -77,15 +105,22 @@ export const Display: React.FC<DisplayProps> = ({ weatherData, forecastData }) =
                             { forecastData.list ? `Low: ${Math.round(forecastData.list[16].main.temp_min)}°` : null }
                         </div>
 
-                        <div className="temp">
-                            { forecastData.list ? `${Math.round(forecastData.list[16].main.temp)}°` : null }
-                            { forecastData.list ? renderIcon(forecastData.list[16].weather[0].description) : null } <br/>
-                        </div>
-                    </Carousel.Item>
+                    </div>
+                </div>
 
-                    <Carousel.Item>
+                <div className="column">
+                    <div className="card">
+
                         <div className="date">
-                            {  forecastData.list ? (new Date(forecastData.list[24].dt*1000)).toString().slice(4, 10) : null }
+                            { forecastData.list ? (new Date(forecastData.list[24].dt*1000)).toString().slice(4, 15) : null }
+                        </div>
+
+                        <div className="render">
+                            { forecastData.list ? renderIcon(forecastData.list[24].weather[0].description) : null }
+                        </div>
+
+                        <div className="temp">
+                            { forecastData.list ? `${Math.round(forecastData.list[24].main.temp)}°` : null }
                         </div>
 
                         <div className="high-low">
@@ -93,15 +128,22 @@ export const Display: React.FC<DisplayProps> = ({ weatherData, forecastData }) =
                             { forecastData.list ? `Low: ${Math.round(forecastData.list[24].main.temp_min)}°` : null }
                         </div>
 
-                        <div className="temp">
-                            { forecastData.list ? `${Math.round(forecastData.list[24].main.temp)}°` : null }
-                            { forecastData.list ? renderIcon(forecastData.list[24].weather[0].description) : null } <br/>
-                        </div>
-                    </Carousel.Item>
+                    </div>
+                </div>
 
-                    <Carousel.Item>
+                <div className="column">
+                    <div className="card">
+
                         <div className="date">
-                            {  forecastData.list ? (new Date(forecastData.list[32].dt*1000)).toString().slice(4, 10) : null }
+                            { forecastData.list ? (new Date(forecastData.list[32].dt*1000)).toString().slice(4, 15) : null }
+                        </div>
+
+                        <div className="render">
+                            { forecastData.list ? renderIcon(forecastData.list[32].weather[0].description) : null }
+                        </div>
+
+                        <div className="temp">
+                            { forecastData.list ? `${Math.round(forecastData.list[32].main.temp)}°` : null }
                         </div>
 
                         <div className="high-low">
@@ -109,13 +151,9 @@ export const Display: React.FC<DisplayProps> = ({ weatherData, forecastData }) =
                             { forecastData.list ? `Low: ${Math.round(forecastData.list[32].main.temp_min)}°` : null }
                         </div>
 
-                        <div className="temp">
-                            { forecastData.list ? `${Math.round(forecastData.list[32].main.temp)}°` : null }
-                            { forecastData.list ? renderIcon(forecastData.list[32].weather[0].description) : null } <br/>
-                        </div>
-                    </Carousel.Item>
-                    
-                </Carousel>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

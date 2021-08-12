@@ -31,14 +31,13 @@ input:focus::placeholder {
 	box-shadow: 3px 4px 0px 0px #899599;
 	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
 	background-color:#ededed;
-	border-radius:15px;
+	border-radius:25px;
 	border:1px solid #d6bcd6;
 	display:inline-block;
 	cursor:pointer;
-	color:#3a8a9e;
 	font-family:Arial;
-	font-size:17px;
-	padding:50px 50px;
+	font-size:16px;
+	padding:10px 10px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #e1e2ed;
 }
@@ -51,53 +50,83 @@ input:focus::placeholder {
 	top:1px;
 }
 
-/* Carousel */
-.temp {
-    position: relative;
-	text-align: center;
-	left: 100px;
-    font-weight: bold;
-    font-size: 9rem;
+/* Weather Table */
+.title {
 	color: white;
-    text-shadow: -2px 2px 0 #4D5FD6, -4px 4px 0 black;
+	background: rgb(2,0,36);
+	background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(255,0,213,1) 0%, rgba(104,0,255,1) 77%);
 }
 
-.high-low {
+.display {
 	position: relative;
+	top: 100px;
+}
+
+.row {
+	width: 100%;
+	padding: 5px;
+	margin: 0 -5px;
+}
+
+.column {
+	float: left;
+	width: 20%;
+	padding: 0 10px;
+}
+
+.card {
+	padding: 12px;
 	text-align: center;
-	right: 150px;
-	top: 125px;
-    font-weight: bold;
-    font-size: 24px;
 	color: white;
-    text-shadow: -2px 2px 0 #4D5FD6, -4px 4px 0 black;
+	background: rgb(2,0,36);
+	background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(255,0,213,1) 0%, rgba(104,0,255,1) 77%);
+}
+
+.render {
+	font-weight: bold;
+	font-size: 64px;
 }
 
 .date {
-	position: relative;
 	text-align: center;
-	top: 75px;
     font-weight: bold;
     font-size: 24px;
-	color: white;
-    text-shadow: -2px 2px 0 #4D5FD6, -4px 4px 0 black;
 }
 
-.time {
-	position: relative;
-	text-align:center;
+.temp {
     font-weight: bold;
-    font-size: 9rem;
-	color: white;
-    text-shadow: -2px 2px 0 #4D5FD6, -4px 4px 0 black;
+	right: 275px;
+	top: 100px;
+    font-size: 40px;
 }
 
+.high-low {
+	text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+@media screen and (max-width: 600px) {
+	.row {
+	  width: 100%;
+	  display: block;
+	  margin-bottom: 20px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.column {
+	  width: 100%;
+	  display: block;
+	  margin-bottom: 20px;
+	}
+}
 
 /* Footer  */
 .footer {
-	position: relative;
-	text-align:center;
-	top: 200px;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
     font-weight: bold;
     font-size: 3rem;
 	color: white;
@@ -114,6 +143,6 @@ input:focus::placeholder {
 
 @media only screen and (max-width: 600px) {
 	.footer {
-		top: 10%;
+		visibility: hidden;
 	}
 }

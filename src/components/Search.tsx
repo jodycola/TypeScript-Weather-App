@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Display } from './Display'
 import { searchingWeather, searchingForecast } from "../services/WeatherService"
-import { Button } from 'react-bootstrap'
 import { GiMagnifyingGlass } from 'react-icons/gi'
 import { FaEraser } from 'react-icons/fa'
 
@@ -22,6 +21,8 @@ export const Search: React.FC = () => {
             .then(r => r.json())
             .then(data => setForecastData(data))
             .catch(error => error)
+
+        setLocationSearch("")
     }
 
     // Clear the search bar and cache history
@@ -35,9 +36,9 @@ export const Search: React.FC = () => {
         <div className="search">
             <input type="text" placeholder="Search by location" value={locationSearch} onChange={(e) => setLocationSearch(e.target.value)}/>
 
-            <Button className="button" style={{color: "black"}} onClick={searchLocation}> <GiMagnifyingGlass/> </Button> 
+            <button className="button" title="Search" style={{color: "black"}} onClick={searchLocation}> <GiMagnifyingGlass/> </button> 
             {" "}
-            <Button className="button" style={{color: "black"}} onClick={clearLocation}> <FaEraser /> </Button>
+            <button className="button" title="Clear" style={{color: "black"}} onClick={clearLocation}> <FaEraser /> </button>
             
             <Display 
                 weatherData={weatherData}
