@@ -1,11 +1,11 @@
-import React from 'react'
-import { TiWeatherSunny, TiWeatherCloudy, TiWeatherWindy, TiWeatherShower, TiWeatherStormy, TiWeatherSnow } from 'react-icons/ti'
+import React from 'react';
+import { TiWeatherSunny, TiWeatherCloudy, TiWeatherWindy, TiWeatherShower, TiWeatherStormy, TiWeatherSnow } from 'react-icons/ti';
 
 // Display Props
 interface DisplayProps {
     weatherData: any | null
     forecastData: any | null 
-}
+};
 
 export const Display: React.FC<DisplayProps> = ({ weatherData, forecastData }) => {
 
@@ -17,7 +17,7 @@ export const Display: React.FC<DisplayProps> = ({ weatherData, forecastData }) =
     let snow = <TiWeatherSnow />
     let mist = <TiWeatherWindy />
     
-    const renderIcon = (condition: any) => {
+    const renderIcon = (condition: string) => {
         switch ( condition ) {
             case "clear sky": return sunny
             case "few clouds": return cloudy
@@ -32,9 +32,11 @@ export const Display: React.FC<DisplayProps> = ({ weatherData, forecastData }) =
         }
     }
 
-
     return (
         <div className="display">
+            {!weatherData.weather ? null
+            :
+            <div>
             <h1 className="title"> 5 Day Forecast </h1>
             <h2 className="title"> {weatherData.name ? weatherData.name : null } </h2>
             <div className="row">
@@ -154,6 +156,8 @@ export const Display: React.FC<DisplayProps> = ({ weatherData, forecastData }) =
                     </div>
                 </div>
             </div>
+            </div>
+            }
         </div>
     )
 }
