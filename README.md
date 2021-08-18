@@ -4,12 +4,18 @@ Weather App designed with TypeScript and React components
 URL: https://typescript-weather.netlify.app/
 
 ## Getting Started
-You may need to clone this repo to get the most of application.
+
+You will need an Openweatherapp key to make request. Sign up [here](https://openweathermap.org/api)  
+
+Inside `Services` > `WeatherService.ts` and paste this into it   
+`const key: string = (<YOUR_PERSONAL_KEY> as string)`  
+
+You may need to clone this repo to get the most of application  
 
 After cloning you should run
-`npm install & npm start`
+`npm install & npm start`  
 
-This should open localhost in the browser and you should be all set
+This should open localhost in the browser and you should be all set  
 
 ## Features
 - Search for a city and get the weather
