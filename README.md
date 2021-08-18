@@ -1,7 +1,7 @@
 # TypeScript-Weather-App
 Weather App designed with TypeScript and React components
 
-URL: https://typescript-weather-app.herokuapp.com/
+URL: https://typescript-weather.netlify.app/
 
 ## Getting Started
 You may need to clone this repo to get the most of application.
@@ -19,7 +19,7 @@ This should open localhost in the browser and you should be all set
 - Toggle dark mode (*_work in progress_*)
 - Deployed and hosted (*_work in progress_*)
 
-<img width="1440" alt="Screen Shot" src="https://user-images.githubusercontent.com/73686621/123458632-447f7c80-d5b3-11eb-8efe-c080ce64c58a.png">
+<img width="1440" alt="Screenshot" src="https://user-images.githubusercontent.com/73686621/129249752-59e859ae-1cd9-464a-97df-fe31b23b08c2.png">
 
 ## Resources
 
